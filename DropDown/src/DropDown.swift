@@ -216,7 +216,15 @@ public final class DropDown: UIView {
 		willSet { tableView.separatorColor = newValue }
 		didSet { reloadAllComponents() }
 	}
-
+	
+	public var separatorInset: UIEdgeInsets {
+        	set {
+	            tableView.separatorInset = newValue
+        	}
+	        get {
+            		return tableView.separatorInset
+	        }
+	}
 	/**
 	The corner radius of DropDown.
 
@@ -239,6 +247,12 @@ public final class DropDown: UIView {
 		reloadAllComponents()
 	}
 
+	public func setBorderStyle(color: UIColor, width: CGFloat) {
+	        tableViewContainer.layer.borderColor = color.cgColor
+        	tableViewContainer.layer.borderWidth = width
+	}
+    
+	
 	/**
 	The masked corners of DropDown.
 
